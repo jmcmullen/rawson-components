@@ -1,0 +1,152 @@
+.navigation {
+  display: flex;
+  width: 100%;
+  height: 75px;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  color: $charcoal;
+  font-family: $font-family-primary;
+  box-shadow: 0 0 2px 1px $faded-grey;
+
+  &__brand {
+    margin-left: 16px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__logo {
+    width: 34px;
+    height: 34px;
+    align-self: center;
+  }
+
+  &__title {
+    font-size: 20px;
+  }
+
+  &__divider {
+    margin: 0 16px;
+    border-left: 1px solid $faded-grey;
+    height: 40px;
+    align-self: center;
+  }
+
+  &__step-list {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__step {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color 0.3s;
+    color: $light-grey;
+
+    svg {
+      [data-name='foreground'] path {
+        fill: $light-grey;
+      }
+    }
+
+    &--selected,
+    &:hover {
+      background-color: $pale-grey;
+      color: $orange;
+
+      svg {
+        [data-name='foreground'] path {
+          fill: $orange;
+        }
+      }
+    }
+  }
+
+  &__step-icon {
+    padding: 0 8px;
+    margin-top: 5px;
+  }
+
+  &__step-label {
+    padding-right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__link-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  &__link-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: $charcoal;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  &__link-icon {
+    padding: 0 6px;
+
+    svg {
+      margin-top: 3px;
+
+      path {
+        fill: $charcoal;
+      }
+    }
+  }
+
+  &__save {
+    cursor: pointer;
+    outline: none;
+    border: 1px solid $orange;
+    border-radius: 5px;
+    background: $orange;
+    color: $white;
+    margin: 10px 16px;
+    width: 108px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 12px;
+    font-weight: bold;
+    align-items: center;
+    vertical-align: sub;
+    transition: all 0.3s;
+
+    &:hover {
+      border-color: darken($orange, 5%);
+      background-color: darken($orange, 5%);
+    }
+
+    svg {
+      margin-top: 3px;
+      margin-right: 6px;
+
+      path {
+        fill: $white;
+      }
+    }
+  }
+}
