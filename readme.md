@@ -48,7 +48,7 @@ When creating new component tags, we recommend _not_ using `stencil` in the comp
 
 Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the Ionic generated web components use the prefix `ion`.
 
-## Using this component
+## Using these components
 
 ### Script tag
 
