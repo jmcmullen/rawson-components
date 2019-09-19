@@ -1,0 +1,22 @@
+$orange: #e4541b;
+$white: #ffffff;
+$charcoal: #333334;
+$blue-slate: #496575;
+$copper: #d5a285;
+$ice-blue: #eceff1;
+$focus-color: #3b99fc;
+$pale-grey: #f5f7f8;
+$light-grey: #aeaeae;
+$slate-grey: #5c5c5d;
+$faded-grey: #dbe0e3;
+
+$success: #06c532;
+$error: #f00;
+
+// Responsiveness
+// These numbers are divisible by both 12 and 16
+$gap: 64px;
+$tablet: 769px;
+$desktop: 960px + (2 * $gap);
+$widescreen: 1152px + (2 * $gap);
+$fullhd: 1344px + (2 * $gap);

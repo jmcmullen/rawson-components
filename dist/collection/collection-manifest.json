@@ -1,0 +1,12 @@
+{
+  "entries": [
+    "components/raw-navigation/raw-navigation.js"
+  ],
+  "compiler": {
+    "name": "@stencil/core",
+    "version": "1.4.0",
+    "typescriptVersion": "3.6.2"
+  },
+  "collections": [],
+  "bundles": []
+}

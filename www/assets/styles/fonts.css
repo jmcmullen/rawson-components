@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'DINOT';
+  src: url('/assets/fonts/DINOT-Bold.woff2') format('woff2'),
+    url('/assets/fonts/DINOT-Bold.woff') format('woff'),
+    url('/assets/fonts/DINOT-Bold.eot') format('embedded-opentype'),
+    url('/assets/fonts/DINOT-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DINOT';
+  src: url('/assets/fonts/DINOT-Regular.woff2') format('woff2'),
+    url('/assets/fonts/DINOT-Regular.woff') format('woff'),
+    url('/assets/fonts/DINOT-Regular.eot') format('embedded-opentype'),
+    url('/assets/fonts/DINOT-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'yorkshireregular';
+  src: url('/assets/fonts/yorkshire-regular-webfont.woff2') format('woff2'),
+    url('/assets/fonts/yorkshire-regular-webfont.woff') format('woff'),
+    url('/assets/fonts/yorkshire-regular-webfont.eot') format('embedded-opentype'),
+    url('/assets/fonts/yorkshire-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
