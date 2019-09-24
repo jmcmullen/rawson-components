@@ -1,0 +1,11 @@
+export { bedroom } from './bedroom';
+export { email } from './email';
+export { facade } from './facade';
+export { homeDesign } from './home-design';
+export { notes } from './notes';
+export { parking } from './parking';
+export { save } from './save';
+export { tick } from './tick';
+export { user } from './user';
+declare const _default: Icon[];
+export default _default;
