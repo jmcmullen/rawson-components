@@ -14,12 +14,11 @@ Stencil components are just Web Components, so they work in any major framework 
 
 ## Getting Started
 
-To start building a new web component using Stencil, clone this repo to a new directory:
+To start, clone this repo to a new directory:
 
 ```bash
-git clone https://github.com/jmcmullen/stencil-component-starter.git my-component
-cd my-component
-git remote rm origin
+git clone https://github.com/jmcmullen/rawson-components.git
+cd rawson-components
 ```
 
 and run:
@@ -43,28 +42,24 @@ npm test
 
 Need help? Check out our docs [here](https://stenciljs.com/docs/my-first-component).
 
-## Naming Components
-
-When creating new component tags, we recommend _not_ using `stencil` in the component name (ex: `<stencil-datepicker>`). This is because the generated component has little to nothing to do with Stencil; it's just a web component!
-
-Instead, use a prefix that fits your company or any name for a group of related components. For example, all of the Ionic generated web components use the prefix `ion`.
-
-## Using this component
+## Using these components
 
 ### Script tag
 
-- [Publish to NPM](https://docs.npmjs.com/getting-started/publishing-npm-packages)
-- Put a script tag similar to this `<script src='https://unpkg.com/my-component@0.0.1/dist/mycomponent.js'></script>` in the head of your index.html
+- Put the following script tags in the head of your index.html
+```html
+<!-- Load in Rawson Components (Web Component) -->
+<script src="https://gitcdn.link/repo/jmcmullen/rawson-components/master/dist/rawson-components/rawson-components.esm.js" type="module">
+</script>
+
+<!-- Load in Rawson Components (Polyfill/IE 11 Support) -->
+<script src="https://gitcdn.link/repo/jmcmullen/rawson-components/master/dist/rawson-components/rawson-components.js" nomodule="">
+</script>
+```
 - Then you can use the element anywhere in your template, JSX, html etc
 
 ### Node Modules
 
-- Run `npm install my-component --save`
-- Put a script tag similar to this `<script src='node_modules/my-component/dist/mycomponent.js'></script>` in the head of your index.html
-- Then you can use the element anywhere in your template, JSX, html etc
-
-### In a stencil-starter app
-
-- Run `npm install my-component --save`
-- Add an import to the npm packages `import my-component;`
+- Run `npm install jmcmullen/rawson-components --save`
+- Put a script tag similar to this `<script src='node_modules/jmcmullen/rawson-components/dist/rawson-components.js'></script>` in the head of your index.html
 - Then you can use the element anywhere in your template, JSX, html etc
