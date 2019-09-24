@@ -10,17 +10,17 @@ The Navigation component is used at the top of Rawson Homes DreamBuilder. This c
 
 ## Properties
 
-| Property | Attribute | Description | Type    | Default                                                                                                                                  |
-| -------- | --------- | ----------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `links`  | --        |             | `any[]` | `[     { uid: 'notes', label: 'Notes', icon: notesIcon },     { uid: 'contact-us', label: 'Contact Us', icon: emailIcon }   ]`           |
-| `steps`  | --        |             | `any[]` | `[     { uid: 'home-design', label: 'Home Design', icon: homeDesignIcon },     { uid: 'facade', label: 'Facade', icon: facadeIcon }   ]` |
+| Property | Attribute | Description         | Type         | Default                                                                                                                          |
+| -------- | --------- | ------------------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------- |
+| `links`  | --        | Navigation links    | `MenuItem[]` | `[     { uid: 'notes', label: 'Notes', icon: notes },     { uid: 'contact-us', label: 'Contact Us', icon: email }   ]`           |
+| `steps`  | --        | Steps in navigation | `MenuItem[]` | `[     { uid: 'home-design', label: 'Home Design', icon: homeDesign },     { uid: 'facade', label: 'Facade', icon: facade }   ]` |
 
 
 ## Events
 
-| Event            | Description | Type               |
-| ---------------- | ----------- | ------------------ |
-| `onSelectedStep` |             | `CustomEvent<any>` |
+| Event            | Description                            | Type               |
+| ---------------- | -------------------------------------- | ------------------ |
+| `onSelectedStep` | Event fires when selected step changes | `CustomEvent<any>` |
 
 
 ----------------------------------------------

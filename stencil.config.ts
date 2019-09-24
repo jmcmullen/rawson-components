@@ -1,7 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
 import image from 'rollup-plugin-img';
-import { inlineSvg } from 'stencil-inline-svg';
 
 console.log('excluding', process.cwd(), './src/assets/images/icons');
 
@@ -15,8 +14,7 @@ export const config: Config = {
         './src/assets/styles/_typography.scss'
       ]
     }),
-    image({ extensions: /\.(png|jpg|jpeg|gif)$/ }),
-    inlineSvg()
+    image({ extensions: /\.(png|jpg|jpeg|gif)$/ })
   ],
   copy: [
     { src: './assets/fonts', dest: 'assets/fonts' },

@@ -9,14 +9,42 @@ import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 
 
 export namespace Components {
+  interface RawButton {
+    'icon': string;
+    'type': ButtonType;
+  }
+  interface RawIcon {
+    'icon'?: Icon;
+    'name'?: string;
+  }
   interface RawNavigation {
-    'links': Array<any>;
-    'steps': Array<any>;
+    /**
+    * Navigation links
+    * @type {Array<MenuItem>}
+    */
+    'links': Array<MenuItem>;
+    /**
+    * Steps in navigation
+    * @type {Array<MenuItem>}
+    */
+    'steps': Array<MenuItem>;
   }
 }
 
 declare global {
 
+
+  interface HTMLRawButtonElement extends Components.RawButton, HTMLStencilElement {}
+  var HTMLRawButtonElement: {
+    prototype: HTMLRawButtonElement;
+    new (): HTMLRawButtonElement;
+  };
+
+  interface HTMLRawIconElement extends Components.RawIcon, HTMLStencilElement {}
+  var HTMLRawIconElement: {
+    prototype: HTMLRawIconElement;
+    new (): HTMLRawIconElement;
+  };
 
   interface HTMLRawNavigationElement extends Components.RawNavigation, HTMLStencilElement {}
   var HTMLRawNavigationElement: {
@@ -24,18 +52,41 @@ declare global {
     new (): HTMLRawNavigationElement;
   };
   interface HTMLElementTagNameMap {
+    'raw-button': HTMLRawButtonElement;
+    'raw-icon': HTMLRawIconElement;
     'raw-navigation': HTMLRawNavigationElement;
   }
 }
 
 declare namespace LocalJSX {
+  interface RawButton extends JSXBase.HTMLAttributes<HTMLRawButtonElement> {
+    'icon'?: string;
+    'type'?: ButtonType;
+  }
+  interface RawIcon extends JSXBase.HTMLAttributes<HTMLRawIconElement> {
+    'icon'?: Icon;
+    'name'?: string;
+  }
   interface RawNavigation extends JSXBase.HTMLAttributes<HTMLRawNavigationElement> {
-    'links'?: Array<any>;
+    /**
+    * Navigation links
+    * @type {Array<MenuItem>}
+    */
+    'links'?: Array<MenuItem>;
+    /**
+    * Event fires when selected step changes
+    */
     'onOnSelectedStep'?: (event: CustomEvent<any>) => void;
-    'steps'?: Array<any>;
+    /**
+    * Steps in navigation
+    * @type {Array<MenuItem>}
+    */
+    'steps'?: Array<MenuItem>;
   }
 
   interface IntrinsicElements {
+    'raw-button': RawButton;
+    'raw-icon': RawIcon;
     'raw-navigation': RawNavigation;
   }
 }

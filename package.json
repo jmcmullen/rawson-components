@@ -26,8 +26,7 @@
     "@stencil/core": "1.4.0",
     "@stencil/sass": "^1.0.1",
     "@types/node": "^12.7.5",
-    "rollup-plugin-img": "^1.1.0",
-    "stencil-inline-svg": "^1.0.0"
+    "rollup-plugin-img": "^1.1.0"
   },
   "license": "MIT",
   "dependencies": {

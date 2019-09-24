@@ -1,6 +1,8 @@
 {
   "entries": [
-    "components/raw-navigation/raw-navigation.js"
+    "components/raw-button/raw-button.js",
+    "components/raw-navigation/raw-navigation.js",
+    "components/raw-icon/raw-icon.js"
   ],
   "compiler": {
     "name": "@stencil/core",

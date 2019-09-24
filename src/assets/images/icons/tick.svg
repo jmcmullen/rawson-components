@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="atoms-/-icons-/-big-/-tick" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Icon" fill-rule="nonzero">
-            <circle id="Oval" fill="#E4541B" cx="12" cy="12" r="12"></circle>
-            <path d="M14.9339476,8.41753046 C15.3613008,7.91079632 16.1053611,7.85791758 16.5958528,8.29942249 C17.0863444,8.7409274 17.1375282,9.50962704 16.710175,10.0163612 L11.0313741,16.75 L7.40093992,13.4582196 C6.91199641,13.0148857 6.86350282,12.2459999 7.29262645,11.7408652 C7.72175009,11.2357304 8.46599056,11.185631 8.95493407,11.6289649 L10.8083345,13.3094766 L14.9339476,8.41753046 Z" id="Path-2" fill="#FFFFFF"></path>
-        </g>
-    </g>
-</svg>
