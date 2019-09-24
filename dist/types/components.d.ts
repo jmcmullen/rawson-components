@@ -10,12 +10,11 @@ import { HTMLStencilElement, JSXBase } from './stencil.core';
 
 export namespace Components {
   interface RawButton {
-    'icon': string;
+    'icon': string | Icon;
     'type': ButtonType;
   }
   interface RawIcon {
-    'icon'?: Icon;
-    'name'?: string;
+    'icon': string | Icon;
   }
   interface RawNavigation {
     /**
@@ -60,12 +59,11 @@ declare global {
 
 declare namespace LocalJSX {
   interface RawButton extends JSXBase.HTMLAttributes<HTMLRawButtonElement> {
-    'icon'?: string;
+    'icon'?: string | Icon;
     'type'?: ButtonType;
   }
   interface RawIcon extends JSXBase.HTMLAttributes<HTMLRawIconElement> {
-    'icon'?: Icon;
-    'name'?: string;
+    'icon'?: string | Icon;
   }
   interface RawNavigation extends JSXBase.HTMLAttributes<HTMLRawNavigationElement> {
     /**

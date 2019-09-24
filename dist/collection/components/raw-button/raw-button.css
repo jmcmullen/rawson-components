@@ -1,14 +1,8 @@
-:host {
+.button {
   display: block;
-}
-:host .primary {
   cursor: pointer;
   outline: none;
-  border: 1px solid #e4541b;
   border-radius: 5px;
-  background: #e4541b;
-  color: #ffffff;
-  margin: 10px 16px;
   width: 108px;
   height: 40px;
   display: flex;
@@ -20,14 +14,26 @@
   vertical-align: sub;
   transition: all 0.3s;
 }
-:host .primary:hover {
+
+.primary {
+  border: 1px solid #e4541b;
+  background: #e4541b;
+  color: #ffffff;
+  margin: 10px 16px;
+}
+.primary:hover {
   border-color: #cd4c18;
   background-color: #cd4c18;
 }
-:host .primary svg {
+.primary svg {
   margin-top: 3px;
   margin-right: 6px;
 }
-:host .primary svg path {
+.primary svg path {
   fill: #ffffff;
+}
+
+.secondary {
+  border: 1px solid rgba(73, 101, 117, 0.2);
+  box-shadow: 0 1px 0 0 rgba(73, 101, 117, 0.2);
 }

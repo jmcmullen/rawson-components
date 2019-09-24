@@ -1,13 +1,20 @@
 import { h } from "@stencil/core";
 import icons from '../../utils/icons';
 export class RawIcon {
+    /**
+     * Find our icon if a string is provided on load.
+     */
     componentWillLoad() {
-        if (this.name && !this.icon) {
-            this.icon = icons.find(i => i.name === this.name);
+        if (this.icon && typeof this.icon === 'string') {
+            this.foundIcon = icons.find(i => i.name === this.icon);
+        }
+        else if (this.icon) {
+            // @ts-ignore
+            this.foundIcon = this.icon;
         }
     }
     render() {
-        return h("i", { class: "icon", innerHTML: this.icon.src });
+        return this.foundIcon ? h("i", { class: "icon", innerHTML: this.foundIcon.src }) : null;
     }
     static get is() { return "raw-icon"; }
     static get encapsulation() { return "shadow"; }
@@ -19,11 +26,11 @@ export class RawIcon {
     }; }
     static get properties() { return {
         "icon": {
-            "type": "unknown",
+            "type": "string",
             "mutable": false,
             "complexType": {
-                "original": "Icon",
-                "resolved": "{ name: string; src: string; }",
+                "original": "string | Icon",
+                "resolved": "string | { name: string; src: string; }",
                 "references": {
                     "Icon": {
                         "location": "global"
@@ -31,28 +38,16 @@ export class RawIcon {
                 }
             },
             "required": false,
-            "optional": true,
-            "docs": {
-                "tags": [],
-                "text": ""
-            }
-        },
-        "name": {
-            "type": "string",
-            "mutable": false,
-            "complexType": {
-                "original": "string",
-                "resolved": "string",
-                "references": {}
-            },
-            "required": false,
-            "optional": true,
+            "optional": false,
             "docs": {
                 "tags": [],
                 "text": ""
             },
-            "attribute": "name",
+            "attribute": "icon",
             "reflect": false
         }
+    }; }
+    static get states() { return {
+        "foundIcon": {}
     }; }
 }

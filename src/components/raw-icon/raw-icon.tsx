@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Prop, State } from '@stencil/core';
 import icons from '../../utils/icons';
 
 @Component({
@@ -7,16 +7,22 @@ import icons from '../../utils/icons';
   shadow: true
 })
 export class RawIcon {
-  @Prop() icon?: Icon;
-  @Prop() name?: string;
+  @Prop() icon: string | Icon;
+  @State() foundIcon: Icon;
 
+  /**
+   * Find our icon if a string is provided on load.
+   */
   componentWillLoad() {
-    if (this.name && !this.icon) {
-      this.icon = icons.find(i => i.name === this.name);
+    if (this.icon && typeof this.icon === 'string') {
+      this.foundIcon = icons.find(i => i.name === this.icon);
+    } else if (this.icon) {
+      // @ts-ignore
+      this.foundIcon = this.icon;
     }
   }
 
   render() {
-    return <i class="icon" innerHTML={this.icon.src} />;
+    return this.foundIcon ? <i class="icon" innerHTML={this.foundIcon.src} /> : null;
   }
 }

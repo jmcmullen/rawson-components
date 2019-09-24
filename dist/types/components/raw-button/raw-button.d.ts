@@ -1,7 +1,8 @@
-declare type ButtonType = 'primary' | 'secondary';
 export declare class RawButton {
     type: ButtonType;
-    icon: string;
+    icon: string | Icon;
+    /**
+     * Render our button
+     */
     render(): any;
 }
-export {};

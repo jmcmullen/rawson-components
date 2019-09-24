@@ -5,10 +5,13 @@ const RawButton = class {
         registerInstance(this, hostRef);
         this.type = 'secondary';
     }
+    /**
+     * Render our button
+     */
     render() {
-        return (h("button", null, h("slot", null), this.icon ? h("raw-icon", { name: this.icon }) : null));
+        return (h("button", { class: { button: true, [this.type]: true } }, h("slot", null), this.icon ? h("raw-icon", { icon: this.icon }) : null));
     }
-    static get style() { return ":host{display:block}:host .primary{cursor:pointer;outline:none;border:1px solid #e4541b;border-radius:5px;background:#e4541b;color:#fff;margin:10px 16px;width:108px;height:40px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:row;flex-direction:row;font-size:12px;font-weight:700;-ms-flex-align:center;align-items:center;vertical-align:sub;-webkit-transition:all .3s;transition:all .3s}:host .primary:hover{border-color:#cd4c18;background-color:#cd4c18}:host .primary svg{margin-top:3px;margin-right:6px}:host .primary svg path{fill:#fff}"; }
+    static get style() { return ".button{display:block;cursor:pointer;outline:none;border-radius:5px;width:108px;height:40px;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;-ms-flex-direction:row;flex-direction:row;font-size:12px;font-weight:700;-ms-flex-align:center;align-items:center;vertical-align:sub;-webkit-transition:all .3s;transition:all .3s}.primary{border:1px solid #e4541b;background:#e4541b;color:#fff;margin:10px 16px}.primary:hover{border-color:#cd4c18;background-color:#cd4c18}.primary svg{margin-top:3px;margin-right:6px}.primary svg path{fill:#fff}.secondary{border:1px solid rgba(73,101,117,.2);-webkit-box-shadow:0 1px 0 0 rgba(73,101,117,.2);box-shadow:0 1px 0 0 rgba(73,101,117,.2)}"; }
 };
 
 const bedroom = {
@@ -112,13 +115,20 @@ const RawIcon = class {
     constructor(hostRef) {
         registerInstance(this, hostRef);
     }
+    /**
+     * Find our icon if a string is provided on load.
+     */
     componentWillLoad() {
-        if (this.name && !this.icon) {
-            this.icon = icons.find(i => i.name === this.name);
+        if (this.icon && typeof this.icon === 'string') {
+            this.foundIcon = icons.find(i => i.name === this.icon);
+        }
+        else if (this.icon) {
+            // @ts-ignore
+            this.foundIcon = this.icon;
         }
     }
     render() {
-        return h("i", { class: "icon", innerHTML: this.icon.src });
+        return this.foundIcon ? h("i", { class: "icon", innerHTML: this.foundIcon.src }) : null;
     }
     static get style() { return ":host{display:block}"; }
 };

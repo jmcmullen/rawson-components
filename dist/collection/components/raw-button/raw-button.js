@@ -3,10 +3,13 @@ export class RawButton {
     constructor() {
         this.type = 'secondary';
     }
+    /**
+     * Render our button
+     */
     render() {
-        return (h("button", null,
+        return (h("button", { class: { button: true, [this.type]: true } },
             h("slot", null),
-            this.icon ? h("raw-icon", { name: this.icon }) : null));
+            this.icon ? h("raw-icon", { icon: this.icon }) : null));
     }
     static get is() { return "raw-button"; }
     static get encapsulation() { return "shadow"; }
@@ -43,9 +46,13 @@ export class RawButton {
             "type": "string",
             "mutable": false,
             "complexType": {
-                "original": "string",
-                "resolved": "string",
-                "references": {}
+                "original": "string | Icon",
+                "resolved": "string | { name: string; src: string; }",
+                "references": {
+                    "Icon": {
+                        "location": "global"
+                    }
+                }
             },
             "required": false,
             "optional": false,

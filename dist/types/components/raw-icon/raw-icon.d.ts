@@ -1,6 +1,9 @@
 export declare class RawIcon {
-    icon?: Icon;
-    name?: string;
+    icon: string | Icon;
+    foundIcon: Icon;
+    /**
+     * Find our icon if a string is provided on load.
+     */
     componentWillLoad(): void;
     render(): any;
 }

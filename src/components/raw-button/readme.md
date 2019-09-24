@@ -7,10 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description | Type                       | Default       |
-| -------- | --------- | ----------- | -------------------------- | ------------- |
-| `icon`   | `icon`    |             | `string`                   | `undefined`   |
-| `type`   | `type`    |             | `"primary" \| "secondary"` | `'secondary'` |
+| Property | Attribute | Description | Type                                       | Default       |
+| -------- | --------- | ----------- | ------------------------------------------ | ------------- |
+| `icon`   | `icon`    |             | `string \| { name: string; src: string; }` | `undefined`   |
+| `type`   | `type`    |             | `"primary" \| "secondary"`                 | `'secondary'` |
 
 
 ## Dependencies
